@@ -1,0 +1,10 @@
+[package]
+name = "accessible-sdh-music"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jesse \"Dylan\" Mahoney (何孟維) <monway@users.noreply.github.com>"]
+license = "GPL-3.0"
+
+[dependencies]
+eframe = "0.29"
+rfd = "0.15"
