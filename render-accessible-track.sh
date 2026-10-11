@@ -22,7 +22,7 @@ fi
 echo "Rendering visual frequency spectrum with burned SDH captions..."
 
 ffmpeg -y -i "$AUDIO_IN" -filter_complex \
-"[0:a]showfreqs=s=1920x1080:mode=bar:colors=0x00FFCC|0xFF5500:fscale=log:ascale=cbr[v_spec]; \
+"[0:a]showfreqs=s=1920x1080:mode=bar:colors=0x00FFCC|0xFF5500:fscale=log:ascale=cbrt[v_spec]; \
  [v_spec]subtitles='$SRT_IN':force_style='FontSize=26,FontName=DejaVu Sans,PrimaryColour=&H00FFFFFF&,BackColour=&H90000000&,BorderStyle=3,Outline=2,MarginV=45'[outv]" \
 -map "[outv]" -map 0:a \
 -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p \
